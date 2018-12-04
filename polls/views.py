@@ -41,6 +41,9 @@ def chatting2(request):
 def chatting3(request):
     return render(request, 'polls/chatting3.html', {'title' : 'Chatting 3!'})
 
+def chatting4(request):
+    return render(request, 'polls/chatting4.html', {'title' : 'Chatting 4'})
+
 
 name = "Echobot 1"
 weather = "Cloudy"
@@ -102,5 +105,11 @@ def sendamail(request):
     sendmailclass.sendmailfunc(xinxi["USERNAME"],xinxi["PASSWORD"],xinxi["FROMMAIL"],xinxi["TOMAIL"],xinxi["SUBJECTTEXT"],xinxi["BODYTEXT"]) #user, password, frommail, tomail, subjecttext, bodytext
     return HttpResponse(reply)
     
+
+from receivemail import getmailclass
+def getamail(request):
+    xinxi = request.POST['message'] #xinxi is a string
+    print("value of xinxi is: " + xinxi)
+    return HttpResponse(getmailclass.getmailfunc())
 
 

@@ -11,6 +11,8 @@ urlpatterns = [
     path('sendtochatterbot/',views.send_replyfromChatterbot),
     path('chatting3', views.chatting3, name='Chatting3'),
     path('thinkinggif',views.thinkinggif),
-    path('sendamail/', views.sendamail)
+    path('sendamail/', views.sendamail),
+    path('chatting4/getamail/', views.getamail),
+    path('chatting4/', views.chatting4),
     # path('base', views.base, name ='base')
 ]
