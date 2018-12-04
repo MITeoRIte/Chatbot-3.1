@@ -2,6 +2,9 @@ import easyimap
 import smtplib
 import requests
 from django.http import HttpResponse
+import email, imaplib
+
+
 
 
 # return HttpResponse("Failed")
@@ -17,8 +20,9 @@ class getmailclass():
         for mail_id in imapper.listids(limit=1):
             print("inside for loop")
             mail = imapper.mail(mail_id)
-            print(mail.body)
-            return mail.body
+            return mail.body, mail.from_addr
             break
-        return mail.body
+        return mail.body, mail.from_addr
 
+
+    

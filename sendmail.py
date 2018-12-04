@@ -2,6 +2,8 @@ import smtplib
 import requests
 from django.http import HttpResponse
 
+
+
 class sendmailclass():
     def sendmailfunc(user, password, frommail, tomail, subjecttext, bodytext):
         gmail_user = user
