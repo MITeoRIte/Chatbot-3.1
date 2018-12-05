@@ -419,13 +419,13 @@ a.article:hover {
 				if (textdifang.value != "") { //if text box isn't blank (FIX THIS SYNTAX)
 					textbeforesplit = textdifang.value; //stores what the user type
 					textdifang.value = ""; //Resets the textbox
+                    messages.push("<b>You: </b>" + textbeforesplit);
 					$.ajax({ //Uses AJAX to send message to chatbot
                 		type: 'POST',
                 		url: 'getamail/', 
 						data: {'message': textbeforesplit}, //sends message to chatbot MAYBE CAN SEPERATE IT INTO FIELDS COS ITS NO CHATBOT
-                		success: function(data, author) { //once reply is received,
+                		success: function(data) { //once reply is received,
 							botMessage = data; //stores reply in botMessge
-							alert(author);
                 		}
             		});
 					document.getElementById("thinking").innerHTML = "Thinking...";
