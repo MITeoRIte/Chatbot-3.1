@@ -11,9 +11,9 @@ import email, imaplib
 
 class getmailclass():
     def getmailfunc():
-        login = 'govtechinternship@gmail.com'
+        login = 'example@gmail.com'
         print("login assigned")
-        password = 'mcONLINE123'
+        password = 'password'
         print("password assigned")
         imapper = easyimap.connect('imap.gmail.com', login, password)
         print("imap connect successful")
